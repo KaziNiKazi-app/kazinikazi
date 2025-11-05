@@ -9,7 +9,7 @@ from sqlalchemy import Boolean, Column, ForeignKey, Integer, String, Float, Date
 class User(Base):
     __tablename__ = "users"
 
-    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    id = Column(String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
     username = Column(String(100), unique=True, index=True, nullable=False)
     first_name = Column(String(100))
     last_name = Column(String(100))
@@ -26,7 +26,7 @@ class User(Base):
 class Employer(Base):
     __tablename__ = "employers"
 
-    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    id = Column(String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
     username = Column(String(100), unique=True, index=True, nullable=False)
     email = Column(String(200), unique=True, index=True, nullable=False)
     phone_number = Column(String(20))
