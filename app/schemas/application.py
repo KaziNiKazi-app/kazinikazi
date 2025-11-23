@@ -17,7 +17,7 @@ class ApplicationResponse(BaseModel):
     class Config:
         from_attributes = True
 
-class ApplicationDetailResponse(ApplicationCreate):
+class ApplicationDetailResponse(ApplicationResponse):
     user_first_name: str
     user_last_name: str
     user_phone: str

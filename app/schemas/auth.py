@@ -38,7 +38,6 @@ class EmployerRegister(BaseModel):
 class Login(BaseModel):
     email: EmailStr
     password: str
-    user_type: str = Field(..., pattern=r'^(user|employer)$')
 
 class TokenResponse(BaseModel):
     access_token: str
