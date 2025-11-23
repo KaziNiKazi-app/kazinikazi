@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Search, MapPin, Users, TrendingUp, Star, Clock, DollarSign } from 'lucide-react';
 import { jobsAPI } from '../services/api';
@@ -73,6 +73,23 @@ const Home = () => {
     if (diffDays < 7) return `${diffDays} days ago`;
     if (diffDays < 30) return `${Math.ceil(diffDays / 7)} weeks ago`;
     return `${Math.ceil(diffDays / 30)} months ago`;
+  };
+
+  const getCategoryIcon = (category) => {
+    const map = {
+      "Cleaning & Housekeeping": "cleaning.png",
+      "Construction & Carpentry": "construction.png",
+      "Plumbing & Electrical": "plumbing.png",
+      "Gardening & Landscaping": "gardening.png",
+      "Security & Watchman": "security.png",
+      "Cooking & Catering": "cooking.png",
+      "Childcare & Nanny": "childcare.png",
+      "Delivery & Transport": "delivery.png",
+      "Tailoring & Sewing": "tailoring.png",
+      "Painting & Decoration": "painting.png"
+    };
+    const icon = map[category] || "default.png";
+    return `/assets/categories/${icon}`;
   };
 
   return (
@@ -177,17 +194,21 @@ const Home = () => {
                 <div
                   key={category}
                   onClick={() => handleCategoryClick(category)}
-                  className="bg-white p-6 rounded-lg border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all cursor-pointer group"
+                  className="bg-white p-6 rounded-lg border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all cursor-pointer group flex flex-col h-full"
                 >
-                  <div className="flex justify-between items-start mb-2">
-                    <h2 className="font-semibold text-gray-900 group-hover:text-blue-600">
+                  <div className="flex justify-between items-start mb-4">
+                    <h2 className="font-semibold text-gray-900 group-hover:text-blue-600 text-lg">
                       {category}
                     </h2>
-                    <div className="bg-blue-100 text-blue-600 px-2 py-1 rounded text-sm font-medium">
-                      {Math.floor(Math.random() * 200) + 50} jobs
+                    <div className="w-12 h-12 flex-shrink-0 bg-blue-50 rounded-lg p-2">
+                      <img 
+                        src={getCategoryIcon(category)} 
+                        alt={category}
+                        className="w-full h-full object-contain"
+                      />
                     </div>
                   </div>
-                  <p className="text-gray-600 text-sm">
+                  <p className="text-gray-600 text-sm mt-auto">
                     Find the best {category.toLowerCase()} jobs in your area
                   </p>
                 </div>
