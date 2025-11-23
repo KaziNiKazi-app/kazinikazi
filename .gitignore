@@ -1,0 +1,4 @@
+.venv/
+.env
+kazinikazi.db
+__pycache__
