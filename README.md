@@ -93,12 +93,14 @@ pip install -r requirements.txt
 File: kazinikazi/backend/app/.env
 
 ```bash
+cd app
 SECRET_KEY=your_super_secret_random_string_here
 ```
 
 6. Run the server:
 
 ```bash
+cd ..
 python run.py
 ```
 The backend server will start at http://127.0.0.1:8000.
