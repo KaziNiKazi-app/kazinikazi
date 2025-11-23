@@ -8,7 +8,7 @@ Whether you're a skilled worker looking for your next gig or a homeowner needing
 
 ---
 
-## 🌟 Key Features
+## Key Features
 
 ### For Job Seekers (Users)
 * **Browse & Search:** Easily find jobs by category (e.g., Plumbing, Gardening) or location (District).
@@ -28,7 +28,7 @@ Whether you're a skilled worker looking for your next gig or a homeowner needing
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Backend
 * **Language:** Python
@@ -45,7 +45,7 @@ Whether you're a skilled worker looking for your next gig or a homeowner needing
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 Follow these instructions to set up the project environment and directory structure on your local machine.
 
@@ -129,7 +129,7 @@ The application will be accessible at http://localhost:3000.
 ## Project Structure Overview
 Here is a quick overview of how the code is organized within the folders you created:
 
-Plaintext
+```bash
 
 kazinikazi/
 ├── backend/
@@ -153,6 +153,7 @@ kazinikazi/
     │   └── App.jsx         # Main application component and routing
     ├── package.json        # Frontend dependencies and scripts
     └── vite.config.js      # Vite configuration
+```
 
 ## Authentication & Roles
 To test the different features, you can register accounts with different roles:
